@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A gentle, responsive sorry page for Anushka." />
+    <title>Sorry, Anushka</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="bg" aria-hidden="true">
+      <div class="blob blob--a"></div>
+      <div class="blob blob--b"></div>
+      <div class="grain"></div>
+    </div>
+
+    <main class="wrap">
+      <header class="top">
+        <a class="pill" href="#" id="toggleTheme" aria-label="Toggle theme">
+          <span class="pill__dot" aria-hidden="true"></span>
+          <span class="pill__text">Soft mode</span>
+        </a>
+      </header>
+
+      <section class="card" aria-labelledby="title">
+        <div class="badge" aria-hidden="true">Anushka</div>
+
+        <h1 id="title" class="title">
+          <span class="title__small">I’m truly</span>
+          <span class="title__big">Sorry.</span>
+        </h1>
+
+        <p class="subtitle" id="subtitle">
+          <span class="type" data-type-speed="26">
+            Anushka, maine galti ki. Gusse aur frustration me thoda tez bol gaya.
+            I didn’t mean to hurt you.
+          </span>
+        </p>
+
+        <div class="note" role="note" aria-label="Apology note">
+          <p class="note__line">
+            <strong>My promise:</strong> main apne words aur tone ka dhyan rakhunga.
+          </p>
+          <p class="note__line">
+            <strong>My request:</strong> please ek chance do, main sudhar jaunga.
+          </p>
+        </div>
+
+        <div class="actions" aria-label="Actions">
+          <button class="btn btn--primary" id="forgiveBtn" type="button">
+            Can you forgive me?
+          </button>
+          <button class="btn" id="openMsgBtn" type="button">
+            Write my message
+          </button>
+        </div>
+
+        <div class="divider" aria-hidden="true"></div>
+
+        <details class="faq">
+          <summary class="faq__q">Why I’m saying sorry (read honestly)</summary>
+          <div class="faq__a">
+            <ul class="list">
+              <li>I raised my voice. That wasn’t fair.</li>
+              <li>I let frustration speak before respect.</li>
+              <li>You matter to me, and I want peace between us.</li>
+            </ul>
+          </div>
+        </details>
+      </section>
+
+      <footer class="footer">
+        <p class="footer__text">
+          Made with sincerity by <span class="mono">Arpit</span>
+        </p>
+      </footer>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="modal__backdrop" data-close="true"></div>
+      <div class="modal__panel" role="document" aria-label="Message editor">
+        <div class="modal__top">
+          <div>
+            <h2 class="modal__title">Your message to Anushka</h2>
+            <p class="modal__hint">Edit it, then copy or share.</p>
+          </div>
+          <button class="iconbtn" id="closeModalBtn" type="button" aria-label="Close">
+            ✕
+          </button>
+        </div>
+
+        <label class="field">
+          <span class="field__label">Message</span>
+          <textarea class="field__input" id="messageBox" rows="8"></textarea>
+        </label>
+
+        <div class="modal__actions">
+          <button class="btn btn--primary" id="copyBtn" type="button">Copy</button>
+          <button class="btn" id="shareBtn" type="button">Share</button>
+        </div>
+
+        <p class="toast" id="toast" aria-live="polite" aria-atomic="true"></p>
+      </div>
+    </div>
+
+    <canvas id="confetti" class="confetti" aria-hidden="true"></canvas>
+    <script src="./script.js"></script>
+  </body>
+</html>
+
